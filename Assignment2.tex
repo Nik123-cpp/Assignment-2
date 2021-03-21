@@ -1,0 +1,214 @@
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+
+\usepackage{setspace}
+\usepackage{gensymb}
+\singlespacing
+\usepackage[cmex10]{amsmath}
+
+\usepackage{amsthm}
+
+\usepackage{mathrsfs}
+\usepackage{txfonts}
+\usepackage{stfloats}
+\usepackage{bm}
+\usepackage{cite}
+\usepackage{cases}
+\usepackage{subfig}
+
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{steinmetz}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{verbatim}
+\usepackage{tfrupee}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{tkz-euclide}
+
+\usetikzlibrary{calc,math}
+\usepackage{listings}
+    \usepackage{color}                                            %%
+    \usepackage{array}                                            %%
+    \usepackage{longtable}                                        %%
+    \usepackage{calc}                                             %%
+    \usepackage{multirow}                                         %%
+    \usepackage{hhline}                                           %%
+    \usepackage{ifthen}                                           %%
+    \usepackage{lscape}     
+\usepackage{multicol}
+\usepackage{chngcntr}
+
+\DeclareMathOperator*{\Res}{Res}
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+\def\inputGnumericTable{}                                 %%
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+\begin{document}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\bibliographystyle{IEEEtran}
+\raggedbottom
+\setlength{\parindent}{0pt}
+\providecommand{\mbf}{\mathbf}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\qfunc}[1]{\ensuremath{Q\left(#1\right)}}
+\providecommand{\sbrak}[1]{\ensuremath{{}\left[#1\right]}}
+\providecommand{\lsbrak}[1]{\ensuremath{{}\left[#1\right.}}
+\providecommand{\rsbrak}[1]{\ensuremath{{}\left.#1\right]}}
+\providecommand{\brak}[1]{\ensuremath{\left(#1\right)}}
+\providecommand{\lbrak}[1]{\ensuremath{\left(#1\right.}}
+\providecommand{\rbrak}[1]{\ensuremath{\left.#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\providecommand{\lcbrak}[1]{\ensuremath{\left\{#1\right.}}
+\providecommand{\rcbrak}[1]{\ensuremath{\left.#1\right\}}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+\providecommand{\abs}[1]{\left\vert#1\right\vert}
+\providecommand{\res}[1]{\Res\displaylimits_{#1}} 
+\providecommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\providecommand{\mtx}[1]{\mathbf{#1}}
+\providecommand{\mean}[1]{E\left[ #1 \right]}
+\providecommand{\fourier}{\overset{\mathcal{F}}{ \rightleftharpoons}}
+%\providecommand{\hilbert}{\overset{\mathcal{H}}{ \rightleftharpoons}}
+\providecommand{\system}{\overset{\mathcal{H}}{ \longleftrightarrow}}
+	%\newcommand{\solution}[2]{\textbf{Solution:}{#1}}
+\newcommand{\solution}{\noindent \textbf{Solution: }}
+\newcommand{\cosec}{\,\text{cosec}\,}
+\providecommand{\dec}[2]{\ensuremath{\overset{#1}{\underset{#2}{\gtrless}}}}
+\newcommand{\myvec}[1]{\ensuremath{\begin{pmatrix}#1\end{pmatrix}}}
+\newcommand{\mydet}[1]{\ensuremath{\begin{vmatrix}#1\end{vmatrix}}}
+\numberwithin{equation}{subsection}
+\makeatletter
+\@addtoreset{figure}{problem}
+\makeatother
+\let\StandardTheFigure\thefigure
+\let\vec\mathbf
+\renewcommand{\thefigure}{\theproblem}
+\def\putbox#1#2#3{\makebox[0in][l]{\makebox[#1][l]{}\raisebox{\baselineskip}[0in][0in]{\raisebox{#2}[0in][0in]{#3}}}}
+     \def\rightbox#1{\makebox[0in][r]{#1}}
+     \def\centbox#1{\makebox[0in]{#1}}
+     \def\topbox#1{\raisebox{-\baselineskip}[0in][0in]{#1}}
+     \def\midbox#1{\raisebox{-0.5\baselineskip}[0in][0in]{#1}}
+\vspace{3cm}
+\title{Assignment 2}
+\author{P Ganesh Nikhil Madhav -CS20BTECH11036}
+\maketitle
+\newpage
+\bigskip
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+Download all python codes from 
+\begin{lstlisting}
+https:
+\end{lstlisting}
+%
+and latex-tikz codes from 
+%
+\begin{lstlisting}
+https://github.com/Nik123-cpp/Assignment-2/blob/main/Assignment2.tex
+\end{lstlisting}
+\section{Gate Problem 64}
+Let $X_{n}$ denote the sum of points obtained when n fair dice are rolled together.The Expectation and Variance of $X_{n}$ are
+\section{Solution}
+$X_{n}$ denote the random variable which denotes the sum of points obtained when n fair dice are rolled together
+We know, when one dice is rolled probability i.e \pr{X_{1}=r} for all r in \{1,2,3,4,5,6\} is equal to  $\frac{1}{6}$ ,Now i will calculate expectation value
+using below formula;
+\begin{align}
+ E( X_{1})&=  \sum_{r=1}^6 r.\pr{X_{1}=r}
+ \label{eq:eq1}
+\\
+&=\frac{1}{6}\sum_{r=1}^6 .r
+\\
+&=\frac{1}{6}.\frac{6(7)}{2} =\frac{7}{2}.
+\end{align}
+\begin{enumerate}
+\item similarly when n dice are rolled ,expectation value from each dice 
+= $\frac{7}{2} $. 
+So expectation of sum of points on n dice is n times the expectation value from each dice i.e
+\begin{align}
+    E(X_{n})& = n(E(X_{1})) =\frac{7}{2} n 
+\label{eq:eq2}
+\end{align}
+\newpage
+    \item By Using the following formula and using \eqref{eq:eq2}  we can calculate variance of  $X_{n}$ 
+    \begin{align}
+    V(X_{n})&=(E(X_{n})^{2}) - (E(X_{n}))^{2}
+    \\
+    &=(E(X_{n})^{2}) - (\frac{49}{4}n^{2})
+    \label{eq:eq3}
+    \end{align}
+    In \eqref{eq:eq3} ,By substituting n as 1 
+    \begin{align}
+        V(X_{1})&=(E(X_{1})^{2}) - \frac{49}{4}
+        \label{eq:eq4}
+    \end{align}
+    Now calculating E($X_{1}^{2}$),
+    \begin{align}
+      E(X_{1}^{2})&=\sum_{r=1}^6r^{2}.\frac{1}{6}
+      \\
+      &=\frac{1}{6}.\frac{6(6+1)(2(6)+1)}{6}
+      \\
+      &=\frac{91}{6}
+      \label{eq:eq5}
+    \end{align}
+    From \eqref{eq:eq4} and \eqref{eq:eq5}
+    \begin{align}
+        V(X_{1})&=\frac{91}{6} -\frac{49}{4}
+        \\
+        &=\frac{35}{12}
+        \label{eq:eq6}
+    \end{align}
+    Since the variance of a sum of independent random variables is the sum of their variances. So, When n dice are rolled the variance of $X_{n}$ is n times the variance of the value when one dice is rolled i.e
+    \begin{align}
+        V(X_{n})&=n.V(X_{1}) = \frac{35}{12}n
+    \end{align}
+    Hence option(B) is correct.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
