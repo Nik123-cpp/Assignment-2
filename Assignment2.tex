@@ -136,60 +136,62 @@ https://github.com/Nik123-cpp/Assignment-2/blob/main/Assignment2.tex
 \section{Gate Problem 64}
 Let $X_{n}$ denote the sum of points obtained when n fair dice are rolled together.The Expectation and Variance of $X_{n}$ are
 \section{Solution}
-$X_{n}$ ,which denotes the sum of points obtained when n fair dice are rolled together
 We know, when one dice is rolled probability i.e \pr{X_{1}=r} for all r in \{1,2,3,4,5,6\} is equal to  p
 \begin{align}
     p&=\frac{1}{6}
 \end{align}
-,Now i will calculate expectation value
+Let $Y_{i}$ denote the value obtained on ith dice when n dices are rolled  
+, therefore 
+\begin{align}
+  X_{n}&=\sum_{i=1}^n Y_{i}
+  \label{eq:eq1}
+\end{align}
+Now i will calculate expectation value of value obtained when one dice is rolled
 using below formula;
 \begin{align}
- E( X_{1})&=  \sum_{r=1}^6 (r\times \pr{X_{1}=r})
- \label{eq:eq1}
-\\
-&=\sum_{r=1}^6 r\times p
+ E(Y_{i})&= E( X_{1}) =\sum_{r=1}^6 (r\times p)
+ \label{eq:eq2}
 \\
 &=\frac{1}{6} \times \sum_{r=1}^6 r
 \\
 &=\frac{7}{2}.
+\label{eq:eq3}
 \end{align}
 \begin{enumerate}
-\item similarly when n dice are rolled ,expectation value from each dice 
-= $\frac{7}{2} $. 
-So expectation of sum of points on n dice is n times the expectation value from each dice i.e
+\item Since the Expectation value of a sum of independent events is the sum of their expectation. So,
 \begin{align}
-    E(X_{n})& = n\times E(X_{1}) =\frac{7}{2} n 
-\label{eq:eq2}
-\end{align}
-\item By Using the following formula and using \eqref{eq:eq2}  we can calculate variance of  $X_{n}$ 
-\begin{align}
-    V(X_{n})&=(E(X_{n})^{2}) - (E(X_{n}))^{2}
+    E(X_{n})&=\sum_{i=1}^n E(Y_{i})
     \\
-    &=(E(X_{n})^{2}) - (\frac{49}{4}n^{2})
-    \label{eq:eq3}
+    & = \sum_{i=1}^n \frac{7}{2} =\frac{7}{2} n 
+\label{eq:eq4}
 \end{align}
-In \eqref{eq:eq3} ,By substituting n as 1 
+\item By Using the following formula ,we can calculate variance of  $X_{1}$ ,
 \begin{align}
-  V(X_{1})&=(E(X_{1})^{2}) - \frac{49}{4}
-  \label{eq:eq4}
+    V(X_{1})&=(E(X_{1})^{2}) - (E(X_{1}))^{2}
+    \label{eq:eq5}
+    \\
+    \sum_{i=1}^k r^2&=\frac{k\times (k+1 )\times (2(k)+1)}{6}
+    \label{eq:eq6}
 \end{align}
-Now calculating E($X_{1}^{2}$),
+Now calculating E($X_{1}^{2}$),by using \eqref{eq:eq6}
 \begin{align}
     E(X_{1}^{2})&=\sum_{r=1}^6(r^{2}\times p)
     \\
     &=\frac{1}{6}\times\sum_{r=1}^6r^{2}
     \\
     &=\frac{91}{6}
-    \label{eq:eq5}
+    \label{eq:eq7}
 \end{align}
-From \eqref{eq:eq4} and \eqref{eq:eq5}
+By using \eqref{eq:eq3},\eqref{eq:eq5} and \eqref{eq:eq7}
 \begin{align}
     V(X_{1})&=\frac{35}{12}
-    \label{eq:eq6}
+    \label{eq:eq8}
 \end{align}
-Since the variance of a sum of independent events is the sum of their variances. So, When n dice are rolled the variance of $X_{n}$ is n times the variance of the value when one dice is rolled i.e
+Since the variance of a sum of independent events is the sum of their variances. So,
 \begin{align}
-    V(X_{n})&=n\times V(X_{1}) = \frac{35}{12}n
+    V(X_{n})&=\sum_{i=1}^n  V(Y_{i})
+    \\
+    &= \frac{35}{12}n
 \end{align}
     Hence option(B) is correct.
 \end{enumerate}
