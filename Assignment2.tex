@@ -184,14 +184,22 @@ Now calculating E($X_{1}^{2}$),by using \eqref{eq:eq6}
 \end{align}
 By using \eqref{eq:eq3},\eqref{eq:eq5} and \eqref{eq:eq7}
 \begin{align}
-    V(X_{1})&=\frac{35}{12}
+    V(X_{1})&=V(Y_{i})
+    \\
+    &=\frac{35}{12}
     \label{eq:eq8}
 \end{align}
-Since the variance of a sum of independent events is the sum of their variances. So,
+Variance of sum can be calculated by using following formula,
 \begin{align}
-    V(X_{n})&=\sum_{i=1}^n  V(Y_{i})
+    V(X_{n})&=V(\sum_{i=0}^n Y_{i})
     \\
-    &= \frac{35}{12}n
+    &= \sum_{i=1}^n V(Y_{i}) + \sum_{1\leq i\not=j \leq n}\text{Cov}(Y_{i},Y_{j})
+\end{align}
+Since Co-variance of independent random variables is zero.So,
+\begin{align}
+    V(X_{n})&=\sum_{i=1}^n V(Y_{i}) + 0
+    \\
+    &=\frac{35}{12}n
 \end{align}
     Hence option(B) is correct.
 \end{enumerate}
